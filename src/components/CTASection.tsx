@@ -3,8 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const CTASection = () => {
+  const handleStartTrial = () => {
+    console.log("Start free trial clicked");
+    alert("Free trial coming soon! We'll notify you when it's ready.");
+  };
+
+  const handleViewDocs = () => {
+    console.log("View documentation clicked");
+    alert("Documentation is being prepared. Stay tuned!");
+  };
+
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
+    <section id="cta" className="py-20 px-6 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-6xl font-bold mb-6">
           Ready to Own Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-yellow-400">Emotional Journey?</span>
@@ -18,7 +28,11 @@ const CTASection = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">🚀 Early Access</h3>
               <p className="mb-6 opacity-90">Join the beta and start building your emotional story today.</p>
-              <Button size="lg" className="w-full bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-pink-600 hover:to-yellow-600">
+              <Button 
+                size="lg" 
+                className="w-full bg-gradient-to-r from-pink-500 to-yellow-500 hover:from-pink-600 hover:to-yellow-600"
+                onClick={handleStartTrial}
+              >
                 Start Free Trial
               </Button>
             </CardContent>
@@ -28,7 +42,12 @@ const CTASection = () => {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">📚 Learn More</h3>
               <p className="mb-6 opacity-90">Explore the technology behind emotional IP and Story Protocol.</p>
-              <Button size="lg" variant="outline" className="w-full border-white/30 text-white hover:bg-white/10">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="w-full border-white/30 text-white hover:bg-white/10"
+                onClick={handleViewDocs}
+              >
                 View Documentation
               </Button>
             </CardContent>

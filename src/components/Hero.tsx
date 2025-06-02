@@ -2,6 +2,22 @@
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const handleStartJourney = () => {
+    // Scroll to CTA section or show a modal for getting started
+    const ctaSection = document.querySelector('#cta');
+    if (ctaSection) {
+      ctaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleViewDemo = () => {
+    // For now, scroll to features section to show demo content
+    const featuresSection = document.querySelector('#features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
       {/* Background gradient */}
@@ -36,10 +52,19 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Button size="lg" className="px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 pulse-glow">
-            Start Your Story
+          <Button 
+            size="lg" 
+            className="px-8 py-4 text-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 pulse-glow"
+            onClick={handleStartJourney}
+          >
+            Start Your Journey
           </Button>
-          <Button size="lg" variant="outline" className="px-8 py-4 text-lg">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="px-8 py-4 text-lg"
+            onClick={handleViewDemo}
+          >
             View Demo
           </Button>
         </div>
